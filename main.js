@@ -66,12 +66,27 @@ function listaOrdenPrecios() {
 
 let ordenPrecios = prompt('¿Desea ordenar los productos por precio de menor a mayor? Responder con "Si" o "No"')
 if ((ordenPrecios === 'si') || (ordenPrecios === 'Si') || (ordenPrecios === 'SI')) {
+    swal({
+        title: 'Gracias por interesarte en nuestros productos!',
+        text: 'Comprando en nuestra web tenes un 15% de descuento! \n Para que no tengas que calcularlo, lo hicimos por vos',
+        icon: 'info'
+    })
+    // alert('Gracias por interesarte en nuestros productos. Comprando en nuestra web tenes un 15% de descuento! \n Para que no tengas que calcularlo, lo hicimos por vos ;) ')
     listaOrdenPrecios()
 } else if (((ordenPrecios === 'no') || (ordenPrecios === 'NO') || (ordenPrecios === '   NO'))) {
-    alert('De acuerdo, no hay problema! Aqui esta la lista de precios por orden predeterminado.');
+    swal({
+        title: 'De acuerdo, no hay problema!',
+        text: 'Aqui esta la lista de precios por orden predeterminado.',
+    })
+    // alert('De acuerdo, no hay problema! Aqui esta la lista de precios por orden predeterminado.');
     listaDeProductos()
 } else {
-    alert('Error: Esta no es una opcion correcta.')
+    swal({
+        title: 'Error',
+        text: 'Esta no es una opcion correcta.',
+        icon: 'error'
+    })
+    // alert('Error: Esta no es una opcion correcta.')
 }
 
 
