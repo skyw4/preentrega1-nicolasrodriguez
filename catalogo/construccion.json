@@ -1,0 +1,46 @@
+
+[
+    {
+        "imagen": "./imgs/Construccion/cemento.webp",
+        "nombre": "Bolsa de Cemento x50kg",
+        "precio": 1200,
+        "id": 1,
+        "categoria": "construccion"
+    },
+    {
+        "imagen": "./imgs/Construccion/cal-cacique.png",
+        "nombre": "Bolsa de Cal x30kg",
+        "precio": 980,
+        "id": 2,
+        "categoria": "construccion"
+    },
+    {
+        "imagen": "./imgs/Construccion/cal-cacique-plus.png",
+        "nombre": "Cal Cacique Plus x30kg",
+        "precio": 1280,
+        "id": 3,
+        "categoria": "construccion"
+    },
+    {
+        "imagen": "./imgs/Construccion/plasticor.png",
+        "nombre": "Plasticor x40kg",
+        "precio": 1080,
+        "id": 4,
+        "categoria": "construccion"
+    },
+    {
+        "imagen": "./imgs/Construccion/cemento-sanmartin.png",
+        "nombre": "Cemento San Martin x50kg",
+        "precio": 1600,
+        "id": 5,
+        "categoria": "construccion"
+    },
+    {
+        "imagen": "./imgs/Construccion/cal-aerea.png",
+        "nombre": "Cal Aerea Loma Negra Plus",
+        "precio": 1320,
+        "id": 6,
+        "categoria": "construccion"
+    }
+]
+

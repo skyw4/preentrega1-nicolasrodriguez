@@ -1,0 +1,24 @@
+$color-principal: #000000;
+$color-secundario: #EAE7DD;
+$color-complementario: #99775C;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* border:2px solid red; */
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+ul,ol {
+    list-style: none;
+}
+
+
+

@@ -1,0 +1,110 @@
+.btn {
+    background-color: $color-secundario;
+    padding: 7px;
+    margin-top: 20px;
+    border-radius: 7px;
+    border: solid $color-secundario;
+}
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 10em;
+    height: 2.5em;
+    background: #141414;
+    color: $color-secundario;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease all;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+// boton ver catalogo (transition) //
+
+.boton.circle {
+    margin-top: 20px;
+
+    &::after{
+        content: "";
+        width: 1px;
+        height: 1px;
+        background: none;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transition: .6s ease-in-out all;
+        border-radius: 100px;
+        transform-origin: center;
+    }
+}
+
+.boton.circle:hover::after {
+    background: rgb(180, 180, 180);
+    transform: scale(400);
+}
+
+.boton.circle:hover{
+    color: #141414;
+}
+
+
+// boton ver mas (transition) //
+
+.container-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    & a {
+        color: $color-secundario;
+    }
+}
+
+.boton span {
+    position: relative;
+    z-index: 2;
+    transition: .3s ease all;
+}
+
+.ver-mas{
+    margin-bottom: 40px;
+}
+
+
+.boton.slice {
+
+    &::after {
+        content: "";
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: calc(-100% - 80px);
+        border-bottom: 80px solid #694d38;
+        border-right: 80px solid transparent;
+    }
+}
+
+.boton.slice:hover::after {
+    left: 0;
+    transition: .4s ease-in-out all;
+}
+
+.btn-contacto:hover{
+    background-color: #694d38;
+    color: #fff;
+    border: solid black 4px;
+    transition: .3s all ease-in-out;
+}
+
+@media(max-width: 1024px){
+    .btn-contacto{
+    margin-bottom: 10px;
+}
+}

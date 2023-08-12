@@ -1,0 +1,44 @@
+[
+    {
+        "imagen": "./imgs/Ceramicas/ceramica-macuna-natural.jpg",
+        "nombre": "Ceramica Macuna Natural",
+        "precio": 5420,
+        "id": 7,
+        "categoria": "ceramicas"
+    },
+    {
+        "imagen": "./imgs/Ceramicas/ceramica-oxido-caspio.jpg",
+        "nombre": "Ceramica Oxido Caspio",
+        "precio": 2150,
+        "id": 8,
+        "categoria": "ceramicas"
+    },
+    {
+        "imagen": "./imgs/Ceramicas/ceramica-taiga-gris.jpg",
+        "nombre": "Ceramica Taiga Gris",
+        "precio": 2340,
+        "id": 9,
+        "categoria": "ceramicas"
+    },
+    {
+        "imagen": "./imgs/Ceramicas/manaos-azul.jpg",
+        "nombre": "Ceramica Manaos Azul",
+        "precio": 2.640,
+        "id": 10,
+        "categoria": "ceramicas"
+    },
+    {
+        "imagen": "./imgs/Ceramicas/tacos-lapacho.jpg",
+        "nombre": "Ceramica Tacos Lapacho",
+        "precio": 3.170,
+        "id": 11,
+        "categoria": "ceramicas"
+    },
+    {
+        "imagen": "./imgs/Ceramicas/tilcara-gris.jpg",
+        "nombre": "Ceramica Tilcara Gris",
+        "precio": 3340,
+        "id": 12,
+        "categoria": "ceramicas"
+    }
+]

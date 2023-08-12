@@ -1,95 +1,65 @@
+let catalogo = [];
 
-// "CONSTRUCTOR" DE PRODUCTOS
-class Producto {
-    constructor(nombre, codigo, precio, orden) {
-        this.nombre = nombre;
-        this.codigo = codigo;
-        this.precio = precio;
-        this.orden = orden;
-    }
-}
-let listaProductos = [];
+let contenedorConstruccion = document.getElementById('catalogoConstruccion')
+let contenedorCeramicas = document.getElementById('catalogoCeramicas')
+let contenedorMuebles = document.getElementById('catalogoMuebles')
 
-// ADICIÓN DE PRODUCTOS
-listaProductos.push(new Producto('Cemento', 'CL', 1250, 1))
-listaProductos.push(new Producto('Cal Cacique', 'CC', 1050, 2))
-listaProductos.push(new Producto('Ladrillos Huecos del 12', 'LH12', 88, 3))
-listaProductos.push(new Producto('Ladrillos Huecos del 8', 'LH8', 74, 4))
-listaProductos.push(new Producto('Plasticor', 'PL', 1190, 5))
-listaProductos.push(new Producto('Adhesivo para Ceramicas "CONSTRUKOR"', 'ACC', 990, 6))
-listaProductos.push(new Producto('M^2 de Arena', 'AR1', 3900, 7))
-listaProductos.push(new Producto('1/2 M^2 de Arena', 'AR2', 2200, 8))
-listaProductos.push(new Producto('1 y 1/2 M^2 de Arena', 'AR3', 5900, 9))
-listaProductos.push(new Producto('M^2 de Piedra Picada', 'PP1', 6000, 10))
-listaProductos.push(new Producto('1/2 M^2 de Piedra Picada', 'PP2', 3800, 11))
-listaProductos.push(new Producto('1 y 1/2 M^2 de Piedra Picada', 'PP3', 9550, 12))
-console.log(listaProductos)
-
-
-function listaDeProductos() {
-    for (const producto of listaProductos) {
-        let precioDescuento = Math.round(producto.precio * 0.85);
-        let contenedor = document.createElement('div');
-        contenedor.innerHTML = `<h3> Producto: ${producto.nombre}</h3>
-                                    <p>  Precio: $${producto.precio}</p>
-                                    <b>  Precio con descuento: $${precioDescuento}</b>
-                                    <p>ID: ${producto.orden}</
-                                    <br>
-                                    <button id="${producto.orden}"  class="button">Agregar al carrito</button>`
-        contenedor.style.border = '2px solid grey'
-        contenedor.style.padding = '15px'
-        contenedor.style.margin = '15px'
-        document.body.appendChild(contenedor)
-    }
-}
-
-function listaOrdenPrecios() {
-    // Lista ordenada segun los precios de menor a mayor
-    let listaOrdenPorPrecio = listaProductos.sort((a, b) => a.precio - b.precio)
-    console.log(listaOrdenPorPrecio)
-
-    for (const producto of listaOrdenPorPrecio) {
-        let precioDescuento = Math.round(producto.precio * 0.85);
-        let contenedor = document.createElement('div');
-        contenedor.innerHTML = `<h3> Producto: ${producto.nombre}</h3>
-                                    <p>  Precio: $${producto.precio}</p>
-                                    <b>  Precio con descuento: $${precioDescuento}</b>
-                                    <p>ID: ${producto.orden}</
-                                    <br>
-                                    <button id="${producto.orden}"  class="button">Agregar al carrito</button>`
-        contenedor.style.border = '2px solid grey'
-        contenedor.style.padding = '15px'
-        contenedor.style.margin = '15px'
-        document.body.appendChild(contenedor)
-    }
-}
-
-let ordenPrecios = prompt('¿Desea ordenar los productos por precio de menor a mayor? Responder con "Si" o "No"')
-if ((ordenPrecios === 'si') || (ordenPrecios === 'Si') || (ordenPrecios === 'SI')) {
-    swal({
-        title: 'Gracias por interesarte en nuestros productos!',
-        text: 'Comprando en nuestra web tenes un 15% de descuento! \n Para que no tengas que calcularlo, lo hicimos por vos',
-        icon: 'info'
+fetch("./catalogo/construccion.json")
+    .then((response) => response.json())
+    .then((construccion) => {
+            for (const producto of construccion) {
+                catalogo.push(producto);
+                let contenedor = document.createElement('div')
+                contenedor.innerHTML = `
+            <img class="img_construccion" src= ${producto.imagen} ></img>
+            <h4>${producto.nombre}</h4>
+            <p class="price">$${producto.precio}</p>
+            <div class="button-container">
+            <button id="${producto.id}" class="button boton slice"> <span>Añadir al Carrito</span></button>
+            </div>
+            `
+                contenedor.className = 'product-card'
+                contenedorConstruccion.appendChild(contenedor)
+            }
     })
-    // alert('Gracias por interesarte en nuestros productos. Comprando en nuestra web tenes un 15% de descuento! \n Para que no tengas que calcularlo, lo hicimos por vos ;) ')
-    listaOrdenPrecios()
-} else if (((ordenPrecios === 'no') || (ordenPrecios === 'NO') || (ordenPrecios === '   NO'))) {
-    swal({
-        title: 'De acuerdo, no hay problema!',
-        text: 'Aqui esta la lista de precios por orden predeterminado.',
-    })
-    // alert('De acuerdo, no hay problema! Aqui esta la lista de precios por orden predeterminado.');
-    listaDeProductos()
-} else {
-    swal({
-        title: 'Error',
-        text: 'Esta no es una opcion correcta.',
-        icon: 'error'
-    })
-    // alert('Error: Esta no es una opcion correcta.')
-}
 
+fetch("./catalogo/ceramicas.json")
+    .then((response) => response.json())
+    .then((ceramicas) => {
+        for (const producto of ceramicas) {
+            catalogo.push(producto);
+            let contenedor = document.createElement('div')
+            contenedor.innerHTML = `
+            <img class="img_ceramicas" src= ${producto.imagen} ></img>
+            <h4>${producto.nombre}</h4>
+            <p class="price">$${producto.precio}</p>
+            <div class="button-container">
+            <button id="${producto.id}" class="button boton slice"> <span>Añadir al Carrito</span></button>
+            </div>
+            `
+            contenedor.className = 'product-card'
+            contenedorCeramicas.appendChild(contenedor)
+        }
+    })
 
+fetch("./catalogo/muebles.json")
+    .then((response) => response.json())
+    .then((muebles) => {
+        for (const producto of muebles) {
+            catalogo.push(producto);
+            let contenedor = document.createElement('div')
+            contenedor.innerHTML = `
+            <img class="img_muebles" src= ${producto.imagen} ></img>
+            <h4>${producto.nombre}</h4>
+            <p class="price">$${producto.precio}</p>
+            <div class="button-container">
+            <button id="${producto.id}" class="button boton slice"> <span>Añadir al Carrito</span></button>
+            </div>
+            `
+            contenedor.className = 'product-card'
+            contenedorMuebles.appendChild(contenedor)
+        }
+    })
 
 
 // Carrito de Compras:
@@ -99,68 +69,11 @@ const carrito = []
 let botones = document.getElementsByClassName('button')
 for (const boton of botones) {
     boton.onclick = () => {
-        let productoElegido = listaProductos.find((producto) => producto.orden === parseInt(boton.id))
+        let productoElegido = catalogo.find((producto) => producto.id === parseInt(boton.id))
         console.log(`Se agrego ${productoElegido.nombre} al carrito`)
         carrito.push(productoElegido)
+        localStorage.setItem('carrito', JSON.stringify(carrito))
     }
 }
-let finalizarCompra = document.createElement('button')
-finalizarCompra.innerText = 'Finalizar Compra'
-finalizarCompra.onclick = () => {
-    alert(`Gracias por confiar en nosotros! En su carrito hay un total de: ${carrito.length} productos`)
-    localStorage.setItem('carrito', JSON.stringify(carrito))
-}
-document.body.appendChild(finalizarCompra)
 
-let verCarrito = document.createElement('button')
-verCarrito.innerText = 'Mostrar carrito'
-verCarrito.onclick = () => {
-    const carritoStorage = JSON.parse(localStorage.getItem('carrito'))
-    console.log(carritoStorage)
-
-    const carritoNombres = carritoStorage.map((producto) => producto.nombre)
-    alert(`Los productos agregados al carrito son: ${carritoNombres}`)
-}
-document.body.appendChild(verCarrito)
-
-let verPrecios = document.createElement('button')
-verPrecios.innerText = 'Ver Precio Total'
-verPrecios.onclick = () => {
-    const carritoStorage = JSON.parse(localStorage.getItem('carrito'))
-
-    const PreciosCarrito = carritoStorage.map((producto) => producto.precio)
-    const carritoPrecios = PreciosCarrito.reduce((acumulador, elemento) => acumulador + elemento, 0);
-    alert(`El precio total de los productos agregados al carrito es de: $${carritoPrecios * 0.85} (con el descuento del 20%)`)
-}
-document.body.appendChild(verPrecios)
-
-//     const total = numeros.reduce((acumulador, elemento) => acumulador + elemento, 0);
-
-
-// Por ahora quedan anuladas estas funciones, pero no quiero descartarlas del todo hasta estar seguro.
-
-/* // let totalProducto = 0;
-
-// // creo la funcion para calcular las cuotas
-// function calculadorDeCuotas() {
-//     let numeroDeCuotas = parseInt(prompt('¿En cuantas cuotas le gustaria realizar su pago?'))
-//     while (numeroDeCuotas > 12) {
-//         alert('El numero maximo de cuotas es de 12, por favor ingrese un numero entre 1 y 12')
-//         numeroDeCuotas = parseInt(prompt('¿En cuantas cuotas le gustaria realizar su pago?'))
-//     }
-//     let precioConCuotas = totalProducto / numeroDeCuotas
-//     alert('El precio total de cada una de las cuotas seria de $' + precioConCuotas.toFixed(2) + '. Muchas gracias por comprar en nuestra tienda!')
-// }
-
-// antes de ejecutarla le pregunto al usuario si le gustaria calcular el pago en cuotas, de ser asi ejecuto la funcion, y en caso contrario, realizo una salida por alert respondiendo al usuario
-// let cuotas = prompt('Si le gustaria realizar el pago en cuotas sin interes (limite de 12 cuotas) y quiere que lo calculemos por usted, escriba "Si", en caso contrario, escriba "No"')
-// if ((cuotas === 'si') || (cuotas === 'Si') || (cuotas === 'SI')) {
-//     calculadorDeCuotas()
-// } else if ((cuotas === 'no') || (cuotas === 'NO') || (cuotas === 'No')) {
-//     alert('Entendido. Muchas gracias por visitar nuestra tienda!')
-// } else {
-//     alert('Error: Esta no es una opcion correcta, por favor recargue la pagina si lo necesita.')
-// } */
-
-
-
+console.log(botones)

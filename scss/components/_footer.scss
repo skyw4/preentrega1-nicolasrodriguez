@@ -1,0 +1,22 @@
+.footer {
+    &__title {
+        background-color: $color-principal;
+        color: $color-secundario;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0.8em;
+    }
+
+    &__body {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 1.5rem;
+        padding: 0.7em;
+        background-color: $color-secundario;
+        color: $color-complementario;
+    }
+}
+
+.icon:hover {
+    color: $color-complementario;
+}

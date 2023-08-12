@@ -1,0 +1,45 @@
+[
+    
+    {
+        "imagen": "./imgs/Muebles/mueble1.jpg",
+        "nombre": "Mueble de Baño Estilo Moderno",
+        "precio": 15650,
+        "id": 13,
+        "categoria": "muebles"
+    },
+    {
+        "imagen": "./imgs/Muebles/mueble2.jpg",
+        "nombre": "Mueble de Baño Moderno Grande",
+        "precio": 21500,
+        "id": 14,
+        "categoria": "muebles"
+    },
+    {
+        "imagen": "./imgs/Muebles/mueble3.jpg",
+        "nombre": "Mueble de Baño Blanco",
+        "precio": 16900,
+        "id": 15,
+        "categoria": "muebles"
+    },
+    {
+        "imagen": "./imgs/Muebles/mueble4.jpg",
+        "nombre": "Mueble de baño madera",
+        "precio": 20.400,
+        "id": 16,
+        "categoria": "muebles"
+    },
+    {
+        "imagen": "./imgs/Muebles/mueble5.jpg",
+        "nombre": "Mueble de baño grande",
+        "precio": 18700,
+        "id": 17,
+        "categoria": "muebles"
+    },
+    {
+        "imagen": "./imgs/Muebles/mueble6.jpg",
+        "nombre": "Mueble de baño grande",
+        "precio": 26900,
+        "id": 18,
+        "categoria": "muebles"
+    }
+]
